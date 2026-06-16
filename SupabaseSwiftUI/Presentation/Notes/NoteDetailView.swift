@@ -77,12 +77,17 @@ struct NoteDetailView: View {
     private var hero: some View {
         ZStack(alignment: .bottomLeading) {
             if let path = currentNote.imageUrl {
-                KFImage(viewModel.getImageUrl(path: path))
-                    .resizable()
-                    .placeholder { AppColors.surfaceDark }
-                    .scaledToFill()
+                // Fixed-size container so scaledToFill is clipped and never
+                // widens the layout (matches AddEditNoteView's hero).
+                Color.clear
                     .frame(height: 350)
                     .frame(maxWidth: .infinity)
+                    .overlay {
+                        KFImage(viewModel.getImageUrl(path: path))
+                            .resizable()
+                            .placeholder { AppColors.surfaceDark }
+                            .scaledToFill()
+                    }
                     .clipped()
             } else {
                 LinearGradient(
