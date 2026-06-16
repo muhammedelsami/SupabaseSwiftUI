@@ -119,3 +119,9 @@ struct NoteDetailView: View {
         .frame(maxWidth: .infinity)
     }
 }
+
+#Preview {
+    NavigationStack {
+        NoteDetailView(note: .previewSampleNoImage, viewModel: NotesViewModel())
+    }
+}

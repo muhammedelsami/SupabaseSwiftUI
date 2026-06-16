@@ -128,11 +128,13 @@ struct AuthView: View {
                     viewModel.toggleMode()
                 }
             } label: {
-                Text(viewModel.isLoginMode ? "Don't have an account? " : "Already have an account? ")
-                    .foregroundStyle(AppColors.textSecondary)
-                + Text(viewModel.isLoginMode ? "Sign Up" : "Sign In")
-                    .foregroundStyle(AppColors.primaryLight)
-                    .bold()
+                HStack(spacing: 4) {
+                    Text(viewModel.isLoginMode ? "Don't have an account?" : "Already have an account?")
+                        .foregroundStyle(AppColors.textSecondary)
+                    Text(viewModel.isLoginMode ? "Sign Up" : "Sign In")
+                        .foregroundStyle(AppColors.primaryLight)
+                        .bold()
+                }
             }
             .font(AppFonts.bodyMedium)
             .padding(.top, 4)

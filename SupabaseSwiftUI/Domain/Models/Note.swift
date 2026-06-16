@@ -37,3 +37,29 @@ extension Note {
         return "\(datePart) \(timePart)"
     }
 }
+
+#if DEBUG
+extension Note {
+    /// Sample note with an image, for SwiftUI previews.
+    static let previewSample = Note(
+        id: "preview-1",
+        userId: "preview-user",
+        title: "Weekend in the mountains",
+        content: "Hiked up to the ridge before sunrise and watched the fog roll out of the valley. The trail was quiet and the air was cold enough to see your breath.",
+        imageUrl: "https://picsum.photos/seed/note/800/600",
+        createdAt: "2026-06-14 08:30:00",
+        updatedAt: "2026-06-15 19:45:00"
+    )
+
+    /// Sample note without an image, for SwiftUI previews.
+    static let previewSampleNoImage = Note(
+        id: "preview-2",
+        userId: "preview-user",
+        title: "Grocery list",
+        content: "Milk, eggs, coffee, sourdough, and something green for once.",
+        imageUrl: nil,
+        createdAt: "2026-06-16 09:00:00",
+        updatedAt: "2026-06-16 09:10:00"
+    )
+}
+#endif

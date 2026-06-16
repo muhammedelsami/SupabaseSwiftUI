@@ -110,7 +110,7 @@ final class NotesRepositoryImpl: NotesRepository {
 
             let paths = notes.compactMap(\.imageUrl)
             if !paths.isEmpty {
-                try? await client.storage.from(bucket).remove(paths: paths)
+                _ = try? await client.storage.from(bucket).remove(paths: paths)
             }
 
             try await client.from("notes").delete().eq("user_id", value: userId).execute()

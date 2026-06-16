@@ -12,7 +12,15 @@ import Supabase
 /// automatically, so on relaunch `auth.currentSession` is restored for us.
 let supabase = SupabaseClient(
     supabaseURL: SupabaseConfig.url,
-    supabaseKey: SupabaseConfig.anonKey
+    supabaseKey: SupabaseConfig.anonKey,
+    options: SupabaseClientOptions(
+        // Opt in to the upcoming default: always emit the locally stored session
+        // as the initial session, regardless of validity/expiration. Consumers of
+        // the initial session must check `session.isExpired` themselves.
+        auth: SupabaseClientOptions.AuthOptions(
+            emitLocalSessionAsInitialSession: true
+        )
+    )
 )
 
 @MainActor
