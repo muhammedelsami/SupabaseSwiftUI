@@ -13,19 +13,35 @@
 		AE403D762FE12E1E009604CE /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = AE403D752FE12E1E009604CE /* Realtime */; };
 		AE403D782FE12E1E009604CE /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = AE403D772FE12E1E009604CE /* Storage */; };
 		AE403D7A2FE12E1E009604CE /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = AE403D792FE12E1E009604CE /* Supabase */; };
+		AE403E012FE13000009604CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE403E022FE13000009604CE /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE403D602FE1209F009604CE /* SupabaseSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupabaseSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE403E202FE13200009604CE /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		AE403E212FE13200009604CE /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AE403D622FE1209F009604CE /* SupabaseSwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AE403E102FE13100009604CE /* Exceptions for "SupabaseSwiftUI" folder in "SupabaseSwiftUI" target */,
+			);
 			path = SupabaseSwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AE403E102FE13100009604CE /* Exceptions for "SupabaseSwiftUI" folder in "SupabaseSwiftUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AE403D5F2FE1209F009604CE /* SupabaseSwiftUI */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AE403D5D2FE1209F009604CE /* Frameworks */ = {
@@ -38,6 +54,7 @@
 				AE403D702FE12E1E009604CE /* Auth in Frameworks */,
 				AE403D782FE12E1E009604CE /* Storage in Frameworks */,
 				AE403D762FE12E1E009604CE /* Realtime in Frameworks */,
+				AE403E012FE13000009604CE /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +64,8 @@
 		AE403D572FE1209F009604CE = {
 			isa = PBXGroup;
 			children = (
+				AE403E202FE13200009604CE /* Secrets.xcconfig */,
+				AE403E212FE13200009604CE /* Secrets.example.xcconfig */,
 				AE403D622FE1209F009604CE /* SupabaseSwiftUI */,
 				AE403D612FE1209F009604CE /* Products */,
 			);
@@ -86,6 +105,7 @@
 				AE403D752FE12E1E009604CE /* Realtime */,
 				AE403D772FE12E1E009604CE /* Storage */,
 				AE403D792FE12E1E009604CE /* Supabase */,
+				AE403E022FE13000009604CE /* Kingfisher */,
 			);
 			productName = SupabaseSwiftUI;
 			productReference = AE403D602FE1209F009604CE /* SupabaseSwiftUI.app */;
@@ -117,6 +137,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				AE403D6E2FE12E1E009604CE /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				AE403E032FE13000009604CE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AE403D612FE1209F009604CE /* Products */;
@@ -270,6 +291,7 @@
 		};
 		AE403D6C2FE120A3009604CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE403E202FE13200009604CE /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -277,12 +299,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HUS2SUYG6U;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SupabaseSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,6 +320,7 @@
 		};
 		AE403D6D2FE120A3009604CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE403E202FE13200009604CE /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,12 +328,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HUS2SUYG6U;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SupabaseSwiftUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,6 +379,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		AE403E032FE13000009604CE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -396,6 +419,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AE403D6E2FE12E1E009604CE /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		AE403E022FE13000009604CE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE403E032FE13000009604CE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
