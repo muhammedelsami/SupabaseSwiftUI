@@ -1,0 +1,148 @@
+# ===========================
+# Xcode
+# ===========================
+
+# Kullanıcıya özel Xcode ayarları
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+
+# Xcode geçici dosyaları
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode build klasörleri
+build/
+DerivedData/
+
+# Xcode belgeleme önbelleği
+*.xcscmblueprint
+
+# ===========================
+# Swift Package Manager
+# ===========================
+
+.build/
+.swiftpm/
+Packages/
+Package.resolved
+
+# ===========================
+# CocoaPods
+# ===========================
+
+Pods/
+*.xcworkspace
+!/*.xcworkspace/contents.xcworkspacedata
+!/*.xcworkspace/xcshareddata/
+
+# Podfile.lock — takıma göre değişir:
+# Paylaşılan bağımlılıkları sabitlemek istiyorsan yorum satırına al
+Podfile.lock
+
+# ===========================
+# Carthage
+# ===========================
+
+Carthage/Build/
+Carthage/Checkouts/
+
+# ===========================
+# Swift / Obj-C derleme artıkları
+# ===========================
+
+*.o
+*.a
+*.dylib
+*.so
+*.plist.bak
+
+# ===========================
+# Gizli & Ortam Değişkenleri
+# ===========================
+
+# Supabase / API anahtarları — ASLA commit'leme
+.env
+.env.*
+*.env
+Secrets.swift
+Secrets.plist
+Config.xcconfig
+**/Private/**
+GoogleService-Info.plist
+
+# ===========================
+# macOS sistem dosyaları
+# ===========================
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+.localized
+.AppleDouble
+.LSOverride
+
+# ===========================
+# Editörler & IDE'ler
+# ===========================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains (AppCode vb.)
+.idea/
+*.iml
+*.iws
+
+# Vim / Emacs geçici dosyaları
+*~
+*.swp
+*.swo
+\#*\#
+.#*
+
+# ===========================
+# Test & Coverage
+# ===========================
+
+*.gcda
+*.gcno
+*.profdata
+*.profraw
+coverage/
+*.coverage
+
+# ===========================
+# Araç çıktıları
+# ===========================
+
+# SwiftLint
+.swiftlint.yml.bak
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+# Simulator
+*.app/
+*.xcarchive/
+
+# ===========================
+# Geçici & log dosyaları
+# ===========================
+
+*.log
+*.tmp
+*.cache
+tmp/
