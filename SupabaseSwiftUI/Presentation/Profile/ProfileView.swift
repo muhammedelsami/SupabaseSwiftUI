@@ -30,8 +30,7 @@ struct ProfileView: View {
                 }
             }
             .navigationTitle("Profile")
-            .toolbarBackground(AppColors.surfaceDark, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            // Native Liquid Glass navigation bar (no forced opaque background).
             .task { await viewModel.loadProfile() }
             .loadingOverlay(viewModel.isSaving)
             .alert("Sign Out", isPresented: $showLogoutAlert) {

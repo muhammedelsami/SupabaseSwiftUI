@@ -10,10 +10,6 @@ struct NotesView: View {
     @State private var showAddNote = false
     @State private var noteToDelete: Note?
 
-    private let columns = [
-        GridItem(.adaptive(minimum: 160), spacing: 14)
-    ]
-
     var body: some View {
         NavigationStack {
             ZStack {
@@ -32,8 +28,8 @@ struct NotesView: View {
                 fab
             }
             .navigationTitle("Notes")
-            .toolbarBackground(AppColors.surfaceDark, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            // Let the system render the navigation bar + search field as Liquid Glass
+            // instead of forcing an opaque background over it.
             .searchable(text: $viewModel.query, prompt: "Search notes")
             .navigationDestination(for: Note.self) { note in
                 NoteDetailView(note: note, viewModel: viewModel)
@@ -56,21 +52,36 @@ struct NotesView: View {
 
     private var notesGrid: some View {
         ScrollView {
-            LazyVGrid(columns: columns, spacing: 14) {
-                ForEach(viewModel.filteredNotes) { note in
-                    NavigationLink(value: note) {
-                        NoteCardView(
-                            note: note,
-                            imageURL: note.imageUrl.map { viewModel.getImageUrl(path: $0) },
-                            onDelete: { noteToDelete = note }
-                        )
-                    }
-                    .buttonStyle(.plain)
-                }
+            // Staggered (masonry) layout: notes are split across two columns so
+            // cards of varying height pack tightly instead of aligning row-by-row.
+            HStack(alignment: .top, spacing: 14) {
+                staggeredColumn(remainder: 0)
+                staggeredColumn(remainder: 1)
             }
             .padding(16)
             .padding(.bottom, 90)
         }
+    }
+
+    private func staggeredColumn(remainder: Int) -> some View {
+        let columnNotes = viewModel.filteredNotes
+            .enumerated()
+            .filter { $0.offset % 2 == remainder }
+            .map(\.element)
+
+        return LazyVStack(spacing: 14) {
+            ForEach(columnNotes) { note in
+                NavigationLink(value: note) {
+                    NoteCardView(
+                        note: note,
+                        imageURL: note.imageUrl.map { viewModel.getImageUrl(path: $0) },
+                        onDelete: { noteToDelete = note }
+                    )
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .top)
     }
 
     private var emptyState: some View {
@@ -102,9 +113,11 @@ struct NotesView: View {
                         .font(.system(size: 26, weight: .semibold))
                         .foregroundStyle(AppColors.textPrimary)
                         .frame(width: 64, height: 64)
-                        .background(Circle().fill(AppColors.primaryMain))
-                        .shadow(color: AppColors.primaryMain.opacity(0.5), radius: 12, y: 6)
                 }
+                .glassEffect(
+                    .regular.tint(AppColors.primaryMain).interactive(),
+                    in: .circle
+                )
                 .padding(24)
             }
         }

@@ -34,8 +34,7 @@ struct AddEditNoteView: View {
             }
             .navigationTitle(isEdit ? "Edit Note" : "New Note")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(AppColors.surfaceDark, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            // Native Liquid Glass navigation bar (no forced opaque background).
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") { dismiss() }
