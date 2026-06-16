@@ -127,7 +127,10 @@ final class NotesRepositoryImpl: NotesRepository {
     }
 
     private func storagePath(userId: String, noteId: String) -> String {
-        "\(userId)/\(noteId)/image.jpg"
+        // Swift's UUID.uuidString is uppercase, but Postgres `auth.uid()::text`
+        // is lowercase. The storage RLS policy compares the first path folder
+        // against auth.uid() as text, so the folder must be lowercase to match.
+        "\(userId.lowercased())/\(noteId)/image.jpg"
     }
 
     private func upload(path: String, data: Data) async throws {

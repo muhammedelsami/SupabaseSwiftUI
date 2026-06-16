@@ -22,6 +22,16 @@
 		AE403E212FE13200009604CE /* Secrets.example.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.example.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AE403E102FE13100009604CE /* Exceptions for "SupabaseSwiftUI" folder in "SupabaseSwiftUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AE403D5F2FE1209F009604CE /* SupabaseSwiftUI */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AE403D622FE1209F009604CE /* SupabaseSwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -32,16 +42,6 @@
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AE403E102FE13100009604CE /* Exceptions for "SupabaseSwiftUI" folder in "SupabaseSwiftUI" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = AE403D5F2FE1209F009604CE /* SupabaseSwiftUI */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AE403D5D2FE1209F009604CE /* Frameworks */ = {
